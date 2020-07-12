@@ -1,23 +1,28 @@
 import React from 'react';
+import {connect} from 'react-redux';
+// import {fetchRestaurants} from './actions/fetchRestaurants'
+import RestaurantsContainer from './containers/RestaurantsContainer'
 
 class App extends React.Component {
   
   
 
-  // async get request **test**
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/restaurants')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  // }
+  componentDidMount() {
+
+  }
 
   render() {
     return (
       <div className="App">
-        App
+        <RestaurantsContainer/>
       </div>
     );
   }
+}
+
+// accessing values in store as props
+const mapStateToProps = (state) => {
+
 }
 
 export default App;
