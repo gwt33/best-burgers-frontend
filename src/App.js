@@ -5,12 +5,7 @@ import RestaurantsContainer from './containers/RestaurantsContainer'
 
 class App extends React.Component {
   
-  
-
-  componentDidMount() {
-
-  }
-
+  //render RestaurantsContainer
   render() {
     return (
       <div className="App">
@@ -18,11 +13,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
-
-// accessing values in store as props
-const mapStateToProps = (state) => {
-
 }
 
 export default App;

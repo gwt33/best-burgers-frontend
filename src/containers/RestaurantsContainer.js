@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 
 class RestaurantsContainer extends React.Component {
 
+    // fetching restaurants in backend API
     componentDidMount() {
         this.props.fetchRestaurants()
     }
@@ -20,6 +21,7 @@ class RestaurantsContainer extends React.Component {
     }
 }
 
+//store is mapped to props and rendered above
 const mapStateToProps = state => {
     return {
         restaurants: state.restaurants

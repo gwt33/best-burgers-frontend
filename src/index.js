@@ -15,6 +15,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 // store setup
 let store = createStore(restaurantReducer, composeEnhancers(applyMiddleware(thunk)))
 
+//render app comp
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

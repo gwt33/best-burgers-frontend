@@ -1,5 +1,6 @@
 import React from 'react'
 
+// renders each restaurant
 const Restaurants = (props) => {
     return (
         <div>
