@@ -18,6 +18,10 @@ class RestaurantInput extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
+        this.setState({
+            name: '',
+            location: ''
+        })
         this.props.createRestaurant(this.state)
     }
 
