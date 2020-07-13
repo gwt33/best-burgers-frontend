@@ -1,11 +1,13 @@
 import React from 'react'
-// import Restaurants from './Restaurants';
 
 const Restaurant = (props) => {
+
+    let restaurant = props.restaurants[props.match.params.id - 1]
+
     return (
-        <div>
-            
-        </div>
+        <li>
+            {restaurant ? restaurant.name : null} - {restaurant ? restaurant.location : null}
+        </li>
     )
 }
 
