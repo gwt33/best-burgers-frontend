@@ -1,8 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux';
+import {Route} from 'react-router-dom'
 import Restaurants from '../components/Restaurants'
+import Restaurant from '../components/Restaurant'
 import RestaurantInput from '../components/RestaurantInput'
 import fetchRestaurants from '../actions/fetchRestaurants'
-import {connect} from 'react-redux';
 
 class RestaurantsContainer extends React.Component {
 
@@ -14,8 +16,9 @@ class RestaurantsContainer extends React.Component {
     render() {
         return (
             <div>
-                <RestaurantInput/> <br/>
-                <Restaurants restaurants={this.props.restaurants}/>
+                <Route path='/restaurants/new' component={RestaurantInput}/>
+                <Route path='/restaurants/:id' render={(routerProps) => <Restaurant {...routerProps} restaurants={this.props.restaurants}/>} />
+                <Route exact path='/restaurants' render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>} />
             </div>
         )
     }
