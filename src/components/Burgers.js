@@ -7,7 +7,7 @@ const Burgers = (props) => {
     return (
         <div>
             <ul>
-            {props. burgers && props.burgers.map(burger => 
+            {props.burgers && props.burgers.map(burger => 
                 <li key={burger.id}>{burger.name} - {burger.description} - {burger.price}</li>
             )}
             </ul>
