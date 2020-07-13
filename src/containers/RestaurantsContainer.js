@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
+import fetchRestaurants from '../actions/fetchRestaurants'
 import Restaurants from '../components/Restaurants'
 import Restaurant from '../components/Restaurant'
 import RestaurantInput from '../components/RestaurantInput'
-import fetchRestaurants from '../actions/fetchRestaurants'
 
 class RestaurantsContainer extends React.Component {
 
@@ -13,12 +13,15 @@ class RestaurantsContainer extends React.Component {
         this.props.fetchRestaurants()
     }
 
+    // Switch chooses the first route that matches the path
     render() {
         return (
             <div>
-                <Route path='/restaurants/new' component={RestaurantInput}/>
-                <Route path='/restaurants/:id' render={(routerProps) => <Restaurant {...routerProps} restaurants={this.props.restaurants}/>} />
-                <Route exact path='/restaurants' render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>} />
+                <Switch>
+                    <Route path='/restaurants/new' component={RestaurantInput}/>
+                    <Route path='/restaurants/:id' render={(routerProps) => <Restaurant {...routerProps} restaurants={this.props.restaurants}/>} />
+                    <Route path='/restaurants' render={(routerProps) => <Restaurants {...routerProps} restaurants={this.props.restaurants}/>} />
+                </Switch>
             </div>
         )
     }
