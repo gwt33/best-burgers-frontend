@@ -9,10 +9,13 @@ export const createBurger = (burger, restaurantId) => {
             body: JSON.stringify(burger)
         })
         .then(response => response.json())
-        .then(burger => dispatch({
-            type: 'CREATE_BURGER',
-            payload: burger
-            })
+        .then(restaurant => {
+            if (restaurant.error) {
+                alert(restaurant.error)
+            } else {
+                dispatch({type: 'CREATE_BURGER', payload: restaurant})
+                }
+            }
         )
     }
 }
