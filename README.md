@@ -1,3 +1,17 @@
+# Best Burgers React App
+
+This app is the frontend for my Best Burgers React App using ReactJS/Redux and connecting to a Ruby on Rails API. It's a simple tracking app that lets you input new restaurants and burgers.
+
+## Usage
+
+First, make sure the backend server is running. After cloning the frontend, cd into the project directory and run:
+
+$ npm install
+
+$ npm start
+
+The app will ask for another port. Type "y" and it should open in the browser at "http://localhost:3001/".
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
