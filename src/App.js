@@ -14,6 +14,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1><span role="img" aria-label="burger-icon">🍔</span> Best Burgers <span role="img" aria-label="burger-icon">🍔</span></h1>
+        <p>Welcome to the best burger React app! Here you can track your restaurants that make your favorite burgers!</p>
         <NavBar />
         <Switch>
           {/* <Route path="/restaurants/new" component={RestaurantInput}/> */}
