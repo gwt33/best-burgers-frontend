@@ -7,7 +7,7 @@ export const deleteBurger = (burgerId, restaurantId) => {
         .then(response => response.json())
         .then(restaurant => dispatch({
             type: 'DELETE_BURGER',
-            burgerId: burgerId
+            payload: restaurant
         }))
     }
 
