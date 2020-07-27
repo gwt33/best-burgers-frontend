@@ -1,19 +1,29 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import BurgersContainer from '../containers/BurgersContainer'
+import { connect } from 'react-redux'
 
 const Restaurant = (props) => {
+    let fetchCompleted = props.restaurants.length !== 0
 
-    let restaurant = props.restaurants[props.match.params.id - 1]
+    let restaurant = props.restaurants.find( r => r.id == props.match.params.id)
     // let restaurant = props.restaurants.filter(restaurant => restaurant.id == props.match.params.id)
-
     return (
-        <div>
-            {restaurant ? null : <Redirect to='/restaurants'/>}
-            <h2>{restaurant ? restaurant.name : null} - {restaurant ? restaurant.location : null}</h2>
-            <BurgersContainer restaurant={restaurant}/>
+        <>{ fetchCompleted ? <div>
+            { restaurant ?
+            <>
+            <h2>{restaurant.name} - {restaurant.location}</h2>
+            <BurgersContainer restaurant={restaurant}/> </> 
+            : <Redirect to='/restaurants'/>}
         </div>
+             : <p>loading...</p>}</>
     )
 }
 
-export default Restaurant;
+const mapStateToProps = state => {
+    return {
+        restaurants: state.restaurants
+    }
+}
+
+export default connect(mapStateToProps)(Restaurant);
