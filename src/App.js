@@ -1,10 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
 import NavBar from './components/NavBar.js'
-// import {fetchRestaurants} from './actions/fetchRestaurants'
 import RestaurantsContainer from './containers/RestaurantsContainer'
-import { Route, Switch } from 'react-router-dom';
-import RestaurantInput from './components/RestaurantInput';
+
+// import {connect} from 'react-redux';
+// import {fetchRestaurants} from './actions/fetchRestaurants'
+// import { Route, Switch } from 'react-router-dom';
+// import RestaurantInput from './components/RestaurantInput';
 
 
 class App extends React.Component {
@@ -12,14 +13,12 @@ class App extends React.Component {
   //render RestaurantsContainer
   render() {
     return (
-      <div className="App">
-        <h1><span role="img" aria-label="burger-icon">🍔</span> Best Burgers <span role="img" aria-label="burger-icon">🍔</span></h1>
-        <p>Welcome to the best burger React app! Here you can track your restaurants that make your favorite burgers!</p>
+      <div>
+        <h1> Best Burgers </h1>
+        <p>Welcome to the best burger React/Redux app! Here you can add your restaurants that make your favorite burgers!</p>
         <NavBar />
-        <Switch>
-          {/* <Route path="/restaurants/new" component={RestaurantInput}/> */}
-        </Switch>
         <RestaurantsContainer/>
+        
       </div>
     );
   }
