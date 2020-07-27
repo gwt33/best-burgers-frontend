@@ -1,4 +1,5 @@
 // POST action to create a new restaurant
+// 
 
 export const createRestaurant = (data) => {
 
