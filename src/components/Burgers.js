@@ -1,11 +1,11 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {deleteBurger} from '../actions/deleteBurger'
+// import {deleteBurger} from '../actions/deleteBurger'
 
 
 const Burgers = (props) => {
 
-    console.log(props.burgers)
+    // console.log(props.burgers)
 
     // const handleDelete = (burger) => {
     //     this.props.deleteBurger(burger.id, burger.restaurant_id)
@@ -19,9 +19,16 @@ const Burgers = (props) => {
                 </li>
 
             )}
+            
         </div>
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        restaurants: state.restaurants.burgers
+    }
+}
+
 // export default connect(null, {deleteBurger})(Burgers)
-export default Burgers
+export default connect(mapStateToProps)(Burgers);
