@@ -1,15 +1,16 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = (props) => {
 
     return (
 
         <div className="NavBar">
-            {/* <NavLink to="/"> Home </NavLink> */}
-            <NavLink to="/restaurants"> Restaurants </NavLink>
-            <NavLink to="/restaurants/new"> Add Restaurant </NavLink>
-            {/* <NavLink exact activeStyle={activeStyle} to="/reviews"> Reviews </NavLink> */}
+            <Link to="/"> Home </Link>
+            -
+            <Link to="/restaurants"> Restaurants </Link>
+            -
+            <Link to="/restaurants/new"> Add Restaurant </Link>
         </div>    )
 }
 
