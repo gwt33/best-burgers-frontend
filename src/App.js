@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar.js'
 import RestaurantsContainer from './containers/RestaurantsContainer'
+import ClickMe from './components/ClickMe'
 
 // import {connect} from 'react-redux';
 // import {fetchRestaurants} from './actions/fetchRestaurants'
@@ -18,6 +19,7 @@ class App extends React.Component {
         <p>Welcome to the best burger React/Redux app! Here you can add your restaurants that make your favorite burgers!</p>
         <NavBar />
         <RestaurantsContainer/>
+        <ClickMe />
         
       </div>
     );

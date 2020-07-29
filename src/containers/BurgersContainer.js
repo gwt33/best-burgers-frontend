@@ -7,6 +7,7 @@ class BurgersContainer extends React.Component {
         return (
             <div>
                 <BurgerInput restaurant={this.props.restaurant}/>
+                <br/>
                 <Burgers burgers={this.props.restaurant && this.props.restaurant.burgers}/>
             </div>
         )

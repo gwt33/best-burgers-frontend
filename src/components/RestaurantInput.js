@@ -8,7 +8,7 @@ class RestaurantInput extends React.Component {
         name: '',
         location: ''
     }
-
+    
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
@@ -23,6 +23,7 @@ class RestaurantInput extends React.Component {
             location: ''
         })
         this.props.createRestaurant(this.state)
+        this.props.history.push('/restaurants')
     }
 
     // setup form for creating new restaurant

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Route, Link} from 'react-router-dom';
-import Restaurant from './Restaurant';
+import {Link} from 'react-router-dom';
+// import Restaurant from './Restaurant';
 // import {deleteBurger} from '../actions/deleteBurger'
 
 // renders each restaurant
@@ -21,7 +21,13 @@ const Restaurants = (props) => {
                 </li>  )} <br/>
         </div>
     )
-
+    
 }
 
-export default Restaurants
+const mapStateToProps = state => {
+    return {
+        restaurants: state.restaurants
+    }
+}
+
+export default connect(mapStateToProps)(Restaurants);
